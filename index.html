@@ -379,6 +379,13 @@ const CODES = [
     symptoom:["Motorcontrolelampje brandt","Slechte brandstofregeling bij koudstart","Hogere uitstoot"],
     oplossing:["Controleer zekering verwarmingscircuit","Meet weerstand verwarmingselement","Vervang de lambdasonde","Controleer bedrading en relais"]
   },
+  { code:"P0087", brand:["generic"],
+    title_nl:"Brandstofraildruk te laag",
+    title_en:"Fuel Rail/System Pressure - Too Low",
+    oorzaak:["Defecte brandstofpomp","Verstopt brandstoffilter","Defecte brandstofdrukregelaar"],
+    symptoom:["Motor houdt in bij acceleratie","Moeilijk starten","Noodloop"],
+    oplossing:["Controleer brandstofdruk","Vervang brandstoffilter","Inspecteer hogedrukpomp"]
+  },
   { code:"P0100", brand:["generic"],
     title_nl:"Massaluchtdebietmeter (MAF) — circuit storing",
     title_en:"Mass Air Flow (MAF) Sensor Circuit Malfunction",
@@ -393,47 +400,61 @@ const CODES = [
     symptoom:["Moeilijk starten","Onregelmatig stationair","Verhoogd brandstofverbruik","Schommelend toerental"],
     oplossing:["Reinig of vervang de MAF-sensor","Controleer luchtinlaatslangen op lekken","Vervang het luchtfilter","Inspecteer aanzuigsysteem"]
   },
+  { code:"P0110", brand:["generic"],
+    title_nl:"Inlaatlucht temperatuursensor (IAT) — circuit storing",
+    title_en:"Intake Air Temperature Sensor Circuit Malfunction",
+    oorzaak:["Defecte IAT-sensor","Beschadigde bedrading","IAT geïntegreerd in MAF defect"],
+    symptoom:["Slecht koudstarten","Verhoogd verbruik","Motorcontrolelampje"],
+    oplossing:["Controleer bedrading en connector","Meet weerstand IAT-sensor","Vervang de IAT-sensor"]
+  },
   { code:"P0115", brand:["generic"],
     title_nl:"Koelvloeistoftemperatuursensor (ECT) — circuit storing",
     title_en:"Engine Coolant Temperature Sensor Circuit Malfunction",
-    oorzaak:["Defecte koelwatertemperatuursensor","Beschadigde bedrading","Slechte connector of aarding","Lage koelvloeistofstand"],
-    symptoom:["Motorcontrolelampje brandt","Slecht starten bij koude motor","Inaccurate temperatuurmeter op dashboard","Hoog brandstofverbruik"],
-    oplossing:["Controleer koelvloeistofniveau","Test de ECT-sensor met multimeter","Controleer bedrading op breuken","Vervang de ECT-sensor"]
+    oorzaak:["Defecte koelwatertemperatuursensor","Beschadigde bedrading","Lage koelvloeistofstand"],
+    symptoom:["Motorcontrolelampje brandt","Slecht starten","Inaccurate temperatuurmeter"],
+    oplossing:["Controleer koelvloeistofniveau","Test de ECT-sensor met multimeter","Vervang de ECT-sensor"]
   },
   { code:"P0121", brand:["generic"],
     title_nl:"Gaskleppositiesensor (TPS) — bereik/prestatie",
     title_en:"Throttle Position Sensor (TPS) Circuit Range/Performance",
-    oorzaak:["Vervuilde gasklepbehuizing","Defecte TPS-sensor","Beschadigde bedrading","Slechte verbinding bij sensor"],
-    symptoom:["Motor aarzelt bij gas geven","Onregelmatig stationair","Vermogensverlies","Noodloop (limp mode)"],
-    oplossing:["Reinig de gasklepbehuizing","Controleer de TPS-sensorwaardes met scanner","Controleer bedrading naar ECU","Vervang gasklephuis of sensor"]
+    oorzaak:["Vervuilde gasklepbehuizing","Defecte TPS-sensor","Slechte verbinding bij sensor"],
+    symptoom:["Motor aarzelt bij gas geven","Onregelmatig stationair","Noodloop"],
+    oplossing:["Reinig de gasklepbehuizing","Controleer de TPS-sensorwaardes","Vervang gasklephuis of sensor"]
   },
   { code:"P0130", brand:["generic"],
     title_nl:"Lambdasonde (Bank 1, Sensor 1) — circuit storing",
     title_en:"O2 Sensor Circuit Malfunction (Bank 1, Sensor 1)",
     oorzaak:["Defecte lambdasonde","Beschadigde bedrading","Uitlaatlek voor de sensor"],
     symptoom:["Hoog verbruik","Slechte emissies","Motorcontrolelampje"],
-    oplossing:["Vervang lambdasonde","Controleer bedrading en connectoren","Dicht uitlaatlekken"]
+    oplossing:["Vervang lambdasonde","Controleer bedrading","Dicht uitlaatlekken"]
   },
   { code:"P0171", brand:["generic"],
     title_nl:"Systeem te mager — bank 1",
     title_en:"System Too Lean — Bank 1",
-    oorzaak:["Vacuümlek na de luchtmassameter","Vervuilde MAF-sensor","Defecte brandstofpomp of verstopt filter","Lekkende inlaatpakking"],
-    symptoom:["Motorcontrolelampje brandt","Aarzelen bij optrekken","Onregelmatig stationair","Mogelijk misfires"],
-    oplossing:["Controleer op vacuümlekken","Reinig of vervang MAF-sensor","Controleer brandstofdruk","Inspecteer inlaatsysteem"]
+    oorzaak:["Vacuümlek na de MAF-sensor","Vervuilde MAF-sensor","Brandstofpomp defect"],
+    symptoom:["Aarzelen bij optrekken","Onregelmatig stationair","Mogelijk misfires"],
+    oplossing:["Controleer op vacuümlekken","Reinig of vervang MAF-sensor","Controleer brandstofdruk"]
   },
   { code:"P0172", brand:["generic"],
     title_nl:"Systeem te rijk — bank 1",
     title_en:"System Too Rich — Bank 1",
-    oorzaak:["Lekkende brandstofinjector","Defecte lambdasonde","Vervuilde MAF-sensor","Defecte brandstofdrukregelaar"],
-    symptoom:["Zwarte rook uit uitlaat","Hoog brandstofverbruik","Benzinegeur bij uitlaat","Slechte motorloop"],
-    oplossing:["Controleer brandstofdruk","Test lambdasonde werking","Inspecteer injectoren op lekken","Controleer luchtinlaat"]
+    oorzaak:["Lekkende brandstofinjector","Defecte lambdasonde","Vervuilde MAF-sensor"],
+    symptoom:["Zwarte rook uit uitlaat","Hoog verbruik","Benzinegeur"],
+    oplossing:["Controleer brandstofdruk","Test lambdasonde","Inspecteer injectoren"]
   },
   { code:"P0174", brand:["generic"],
     title_nl:"Systeem te mager — bank 2",
     title_en:"System Too Lean — Bank 2",
     oorzaak:["Vacuümlek","Defecte MAF-sensor","Brandstofdruk te laag"],
-    symptoom:["Aarzelen van de motor","Misfires op bank 2","Motorcontrolelampje"],
+    symptoom:["Aarzelen van de motor","Misfires op bank 2"],
     oplossing:["Zoek vacuümlekken","Test brandstofdruk","Reinig MAF-sensor"]
+  },
+  { code:"P0201", brand:["generic"],
+    title_nl:"Injector circuit storing — cilinder 1",
+    title_en:"Injector Circuit Malfunction - Cylinder 1",
+    oorzaak:["Defecte injector","Bedradingsbreuk naar injector","ECU storing"],
+    symptoom:["Motor loopt op minder cilinders","Schokkend rijden","Motorlampje"],
+    oplossing:["Meet weerstand injector","Controleer bedrading","Vervang injector cilinder 1"]
   },
   { code:"P0234", brand:["generic"],
     title_nl:"Turbocharger — overboost conditie",
@@ -446,22 +467,29 @@ const CODES = [
     title_nl:"Turbocharger — te lage boost druk",
     title_en:"Turbocharger Underboost Condition",
     oorzaak:["Lek in inlaatsysteem/boost slangen","Defecte turbo","Defecte wastegate"],
-    symptoom:["Vermogensverlies","Sissend geluid bij acceleratie","Motorcontrolelampje brandt"],
+    symptoom:["Vermogensverlies","Sissend geluid","Motorcontrolelampje"],
     oplossing:["Controleer slangen op scheuren","Test de turbo op speling","Inspecteer de intercooler"]
   },
   { code:"P0300", brand:["generic"],
     title_nl:"Willekeurige misfire gedetecteerd",
     title_en:"Random or Multiple Cylinder Misfire Detected",
-    oorzaak:["Versleten bougies","Defecte bobine(s)","Vacuümlek","Lage brandstofdruk","Slechte brandstofkwaliteit"],
-    symptoom:["Schokkend rijden","Motorcontrolelampje knippert","Moeilijk starten","Vermogensverlies"],
-    oplossing:["Vervang bougies en/of bobines","Controleer op vacuümlekken","Test brandstofsysteem","Controleer compressie"]
+    oorzaak:["Versleten bougies","Defecte bobine(s)","Vacuümlek","Lage brandstofdruk"],
+    symptoom:["Schokkend rijden","Motorcontrolelampje knippert","Vermogensverlies"],
+    oplossing:["Vervang bougies/bobines","Controleer op vacuümlekken","Test brandstofsysteem"]
+  },
+  { code:"P0325", brand:["generic"],
+    title_nl:"Pingelsensor 1 circuit — storing (Bank 1)",
+    title_en:"Knock Sensor 1 Circuit Malfunction (Bank 1)",
+    oorzaak:["Defecte pingelsensor","Bedradingsprobleem","Mechanische motorruis"],
+    symptoom:["Inhouden van de motor","Verlies van acceleratie","Motorlampje"],
+    oplossing:["Vervang de pingelsensor","Controleer bedrading op marterschade"]
   },
   { code:"P0335", brand:["generic"],
     title_nl:"Krukassensor (CKP) — circuit storing",
     title_en:"Crankshaft Position Sensor (CKP) Circuit Malfunction",
-    oorzaak:["Defecte krukassensor","Beschadigde bedrading of magnetische ring"],
+    oorzaak:["Defecte krukassensor","Beschadigde bedrading","Defect toonwiel"],
     symptoom:["Motor start niet","Motor valt plotseling uit","Geen toerentalsignaal"],
-    oplossing:["Vervang krukassensor","Controleer bedrading","Inspecteer de reluctor ring"]
+    oplossing:["Vervang krukassensor","Controleer bedrading","Inspecteer reluctor ring"]
   },
   { code:"P0340", brand:["generic"],
     title_nl:"Nokassensor (CMP) — circuit storing",
@@ -473,50 +501,148 @@ const CODES = [
   { code:"P0366", brand:["generic"],
     title_nl:"Nokaspositiesensor 'B' — bereik/prestatie (Bank 1)",
     title_en:"Camshaft Position Sensor 'B' Circuit Range/Performance (Bank 1)",
-    oorzaak:["Vervuilde sensor (metaalslijpsel)","Timing van de uitlaatnokas onjuist","Defecte sensor"],
+    oorzaak:["Vervuilde sensor (metaalslijpsel)","Timing onjuist","Defecte sensor"],
     symptoom:["Onregelmatig stationair","Vermogensverlies","Slecht starten"],
-    oplossing:["Reinig de sensorpunt","Controleer distributie/VVT-systeem","Vervang de sensor"]
+    oplossing:["Reinig de sensorpunt","Controleer distributie","Vervang de sensor"]
   },
   { code:"P0401", brand:["generic"],
     title_nl:"EGR-systeem — onvoldoende doorstroming",
     title_en:"EGR System Insufficient Flow Detected",
     oorzaak:["Verstopte EGR-klep (roetophoping)","Defecte EGR-solenoid","Verstopte EGR-leidingen"],
-    symptoom:["Pingelen van de motor (detonatie)","Motorcontrolelampje brandt","Iets hoger verbruik"],
-    oplossing:["Reinig de EGR-klep en leidingen","Vervang de EGR-klep indien defect","Controleer vacuümslangen naar EGR"]
+    symptoom:["Pingelen van de motor (detonatie)","Motorcontrolelampje","Hoger verbruik"],
+    oplossing:["Reinig de EGR-klep en leidingen","Vervang de EGR-klep indien defect","Controleer vacuüm"]
   },
   { code:"P0420", brand:["generic"],
     title_nl:"Katalysator-efficiëntie onder drempelwaarde — bank 1",
     title_en:"Catalyst System Efficiency Below Threshold — Bank 1",
-    oorzaak:["Defecte katalysator","Uitlaatlek voor de katalysator","Slechte lambdasonde"],
-    symptoom:["Motorcontrolelampje brandt","Geen directe rijklachten","Soms benzinegeur"],
-    oplossing:["Controleer op uitlaatlekken","Test werking lambdasondes","Vervang katalysator"]
+    oorzaak:["Defecte katalysator","Uitlaatlek","Slechte lambdasonde"],
+    symptoom:["Motorcontrolelampje brandt","Benzinegeur","Afkeur emissietest"],
+    oplossing:["Controleer op uitlaatlekken","Test lambdasondes","Vervang katalysator"]
   },
   { code:"P0442", brand:["generic"],
     title_nl:"EVAP systeem — klein lek gedetecteerd",
     title_en:"EVAP System Leak Detected (Small Leak)",
     oorzaak:["Kleine scheur in slang","Tankdop niet goed dicht"],
-    symptoom:["Motorcontrolelampje brandt"],
+    symptoom:["Geen directe rijklachten","Benzinegeur rondom auto"],
     oplossing:["Controleer/vervang tankdop","Inspecteer slangen"]
+  },
+  { code:"P0500", brand:["generic"],
+    title_nl:"Snelheidssensor (VSS) — storing",
+    title_en:"Vehicle Speed Sensor (VSS) Malfunction",
+    oorzaak:["Defecte snelheidssensor","Bedradingsfout","Instrumentenpaneel defect"],
+    symptoom:["Snelheidsmeter werkt niet","Automaat schakelt vreemd","ABS lampje"],
+    oplossing:["Vervang snelheidssensor","Meet bedrading door"]
   },
   { code:"P0505", brand:["generic"],
     title_nl:"Stationair regelsysteem — storing",
     title_en:"Idle Control System Malfunction",
-    oorzaak:["Vervuilde stationairregelklep","Vacuümlek","Defecte stappenmotor"],
-    symptoom:["Motor valt uit bij stoppen","Te hoog of te laag stationair"],
-    oplossing:["Reinig gasklephuis en regelklep","Vervang stappenmotor"]
+    oorzaak:["Vervuilde IAC-klep","Vacuümlek","Defecte stappenmotor"],
+    symptoom:["Motor valt uit bij stoppen","Te hoog/laag stationair"],
+    oplossing:["Reinig gasklephuis en IAC-klep","Vervang IAC-klep"]
+  },
+  { code:"P0507", brand:["generic"],
+    title_nl:"Stationair toerental hoger dan verwacht",
+    title_en:"Idle Control System RPM Higher Than Expected",
+    oorzaak:["Vacuümlek","Vervuild gasklephuis","Defecte gasklepsensor"],
+    symptoom:["Motor draait te snel bij stilstand","Hoog verbruik"],
+    oplossing:["Zoek vacuümlekken","Reinig gasklephuis","Inleren gasklep"]
+  },
+  { code:"P0520", brand:["generic"],
+    title_nl:"Oliedruksensor circuit — storing",
+    title_en:"Engine Oil Pressure Sensor/Switch Circuit Malfunction",
+    oorzaak:["Defecte oliedruksensor","Bedradingsprobleem","Lage oliedruk"],
+    symptoom:["Oliedruklampje brandt","Foutieve meterstand"],
+    oplossing:["Meet oliedruk handmatig","Vervang de sensor","Check oliepeil"]
+  },
+  { code:"P0562", brand:["generic"],
+    title_nl:"Systeemspanning te laag",
+    title_en:"System Voltage Low",
+    oorzaak:["Slechte accu","Defecte dynamo","Corrosie op accupolen"],
+    symptoom:["Diverse elektronische storingen","Dashboard verlichting zwak"],
+    oplossing:["Test de accu en dynamo","Maak accupolen schoon"]
+  },
+  { code:"P0601", brand:["generic"],
+    title_nl:"Interne regelmodule — Checksum fout",
+    title_en:"Internal Control Module Memory Check Sum Error",
+    oorzaak:["Interne softwarefout ECU","Spanningspiek","Defecte ECU"],
+    symptoom:["Motor gaat in noodloop","Check Engine lampje"],
+    oplossing:["Update software (flashen)","Vervang de ECU"]
   },
   { code:"P0606", brand:["generic"],
     title_nl:"ECU / Processor — interne fout",
     title_en:"ECM / PCM Processor Fault",
-    oorzaak:["Interne fout in motorcomputer","Slechte voeding/massa ECU","Softwarefout"],
-    symptoom:["Diverse storingen tegelijk","Auto start niet","Dashboardlampjes branden willekeurig"],
-    oplossing:["Check voeding en massa op ECU","Update software","Vervang ECU"]
+    oorzaak:["Interne fout in motorcomputer","Slechte voeding/massa ECU"],
+    symptoom:["Auto start niet","Dashboard lampjes branden willekeurig"],
+    oplossing:["Check voeding en massa op ECU","Vervang de ECU"]
+  },
+  { code:"P0638", brand:["generic"],
+    title_nl:"Gasklepregeling — bereik/prestatie probleem",
+    title_en:"Throttle Actuator Control Range/Performance",
+    oorzaak:["Vervuild gasklephuis","Defecte gasklepstelmotor","Bedrading"],
+    symptoom:["Traag reageren op gas","Schokken","Noodloop"],
+    oplossing:["Reinig gasklephuis grondig","Inleren gasklep"]
+  },
+  { code:"P0700", brand:["generic"],
+    title_nl:"Transmissieregelsysteem — algemene storing",
+    title_en:"Transmission Control System Malfunction",
+    oorzaak:["Fout in de automatische versnellingsbak","TCM storing"],
+    symptoom:["Bak schakelt slecht","Noodloop van de transmissie"],
+    oplossing:["Lees transmissiemodule (TCM) apart uit voor specifieke codes"]
+  },
+  { code:"P0705", brand:["generic"],
+    title_nl:"Transmissiebereiksensor (PRNDL) — circuit storing",
+    title_en:"Transmission Range Sensor Circuit Malfunction (PRNDL Input)",
+    oorzaak:["Defecte keuzeschakelaar","Slechte afstelling van de kabel","Vocht in de stekker"],
+    symptoom:["Auto start niet in P of N","Achteruitrijlichten werken niet"],
+    oplossing:["Controleer sensor op de bak","Stel de schakelkabel af"]
+  },
+  { code:"P0715", brand:["generic"],
+    title_nl:"Ingaande assnelheidssensor — circuit storing",
+    title_en:"Input/Turbine Speed Sensor Circuit Malfunction",
+    oorzaak:["Defecte sensor in de versnellingsbak","Bedradingsbreuk"],
+    symptoom:["Hard schokken bij schakelen","Versnellingsbak slipt"],
+    oplossing:["Vervang de speed sensor","Controleer kabelboom naar de bak"]
+  },
+  { code:"P0730", brand:["generic"],
+    title_nl:"Onjuiste overbrengingsverhouding",
+    title_en:"Incorrect Gear Ratio",
+    oorzaak:["Te laag oliepeil transmissie","Defecte solenoid","Interne mechanische schade"],
+    symptoom:["Transmissie slipt","Schakelt niet naar juiste versnelling"],
+    oplossing:["Check oliepeil en kwaliteit (ATF)","Inspecteer solenoïdes"]
+  },
+  { code:"P0740", brand:["generic"],
+    title_nl:"Koppelomvormer-koppeling (TCC) — circuit storing",
+    title_en:"Torque Converter Clutch Circuit Malfunction",
+    oorzaak:["Defecte TCC solenoid","Mechanisch defect in koppelomvormer"],
+    symptoom:["Hoog toerental op de snelweg","Slecht brandstofverbruik"],
+    oplossing:["Vervang TCC solenoid","Laat koppelomvormer testen"]
+  },
+  { code:"P0841", brand:["generic"],
+    title_nl:"Transmissievloeistoftruksensor — bereik/prestatie",
+    title_en:"Transmission Fluid Pressure Sensor/Switch A Range/Performance",
+    oorzaak:["Slechte oliedruk in de bak","Defecte druksensor","Vervuilde olie"],
+    symptoom:["Schokkend schakelen","Noodloop transmissie"],
+    oplossing:["Ververs ATF olie en filter","Vervang druksensor"]
+  },
+  { code:"P0900", brand:["generic"],
+    title_nl:"Koppelingsactuator circuit — open",
+    title_en:"Clutch Actuator Circuit Open",
+    oorzaak:["Defecte koppelingsmotor (semi-automaat)","Bedradingsbreuk"],
+    symptoom:["Auto rijdt niet weg","Koppeling grijpt niet aan"],
+    oplossing:["Test koppelingsactuator","Controleer zekering en bedrading"]
   },
 
   // ══════════════════════════════════════════
   //  PEUGEOT-SPECIFIEKE CODES (PSA Group)
   // ══════════════════════════════════════════
 
+  { code:"P1012", brand:["peugeot"],
+    title_nl:"Roetfilter (FAP) — max aantal afgebroken regeneraties",
+    title_en:"Particle Filter (FAP) — Max Number of Aborted Regenerations",
+    oorzaak:["Te veel korte ritjes","Uitlaattemperatuursensor defect"],
+    symptoom:["Melding 'Risico op verstopping'","Motor in noodloop"],
+    oplossing:["Forceer regeneratie via diagnose","Maak lange rit (30 min, 3000 rpm)"]
+  },
   { code:"P1112", brand:["peugeot"],
     title_nl:"Brandstof hogedrukbewaking — druk te laag (HDi)",
     title_en:"Fuel High Pressure Monitoring — Pressure Too Low (HDi)",
@@ -524,12 +650,40 @@ const CODES = [
     symptoom:["Motor stopt plotseling","Moeilijk starten"],
     oplossing:["Retourtest injectoren","Vervang brandstoffilter","Test HP pomp"]
   },
+  { code:"P1113", brand:["peugeot"],
+    title_nl:"Variabele inlaat — koherentie fout (PSA)",
+    title_en:"Intake Air Temperature/Pressure Coherence (PSA)",
+    oorzaak:["Inlaatdruksensor defect","Vacuümlek bij inlaatspruitstuk"],
+    symptoom:["Inhouden bij deellast","Hoog verbruik"],
+    oplossing:["Vervang inlaatdruksensor","Check op lekken"]
+  },
+  { code:"P1153", brand:["peugeot"],
+    title_nl:"Gasklep adaptatie — buiten bereik (stops niet gehaald)",
+    title_en:"Throttle Learning Limits — Dysfunction (PSA)",
+    oorzaak:["Vervuild gasklephuis","Defecte gasklepunit","Softwarefout"],
+    symptoom:["Slecht stationair","Motor reageert niet op gas"],
+    oplossing:["Reinig gasklephuis","Inleren via Diagbox","Vervang unit"]
+  },
+  { code:"P1160", brand:["peugeot"],
+    title_nl:"Inlaatspruitstuk gasstroom — koherentiefout",
+    title_en:"Intake Manifold Gas Flow Coherence",
+    oorzaak:["Vacuümlek","Defecte MAP-sensor","Vervuilde inlaatkanalen"],
+    symptoom:["Motor stottert","Check engine lampje"],
+    oplossing:["Rooktest op inlaattraject","Controleer MAP sensor"]
+  },
   { code:"P1161", brand:["peugeot"],
     title_nl:"Gaskleppositiesensor — onjuist signaal (PSA)",
     title_en:"Throttle Position Coherence — Implausible Signal (PSA)",
-    oorzaak:["Defecte gemotoriseerde gasklep","Vervuiling in gasklephuis","Draadbreuk"],
+    oorzaak:["Defecte gemotoriseerde gasklep","Vervuiling","Draadbreuk"],
     symptoom:["Schommelend stationair","Noodloop"],
-    oplossing:["Reinig gasklephuis","Vervang gasklep unit","Inleren gasklep"]
+    oplossing:["Reinig gasklephuis","Vervang unit","Inleren gasklep"]
+  },
+  { code:"P1167", brand:["peugeot"],
+    title_nl:"Brandstofdrukregeling — afwijking test (PSA)",
+    title_en:"Fuel Rail Pressure Regulation Fault (PSA)",
+    oorzaak:["Defecte drukregelaar op de pomp","Lekkage in hogedruksysteem"],
+    symptoom:["Schokken bij optrekken","Noodloop"],
+    oplossing:["Controleer drukregelaar","Check hogedrukslangen"]
   },
   { code:"P1336", brand:["peugeot"],
     title_nl:"Misfire op onbepaalde cilinders — risico schade kat",
@@ -538,46 +692,137 @@ const CODES = [
     symptoom:["Schokken bij optrekken","Lampje knippert"],
     oplossing:["Vervang bobine/bougies","Carbon clean inlaat"]
   },
+  { code:"P1337", brand:["peugeot"],
+    title_nl:"Misfire gedetecteerd op cilinder 1 (PSA)",
+    title_en:"Misfire Detected on Cylinder 1 (PSA)",
+    oorzaak:["Defecte bobine cilinder 1","Slechte bougie","Lekkende injector"],
+    symptoom:["Motor trilt","Vermogensverlies"],
+    oplossing:["Vervang bobine/bougie cilinder 1","Wissel bobine om"]
+  },
+  { code:"P1338", brand:["peugeot"],
+    title_nl:"Misfire gedetecteerd op cilinder 2 (PSA)",
+    title_en:"Misfire Detected on Cylinder 2 (PSA)",
+    oorzaak:["Bobine/Bougie cilinder 2 defect"],
+    symptoom:["Motor trilt","Lampje knippert"],
+    oplossing:["Vervang componenten cilinder 2"]
+  },
+  { code:"P1339", brand:["peugeot"],
+    title_nl:"Misfire gedetecteerd op cilinder 3 (PSA)",
+    title_en:"Misfire Detected on Cylinder 3 (PSA)",
+    oorzaak:["Bobine/Bougie cilinder 3 defect","Vervuilde kleppen"],
+    symptoom:["Inhouden onder belasting"],
+    oplossing:["Inlaat reinigen","Vervang bougie/bobine"]
+  },
+  { code:"P1340", brand:["peugeot"],
+    title_nl:"Misfire gedetecteerd op cilinder 4 (PSA)",
+    title_en:"Misfire Detected on Cylinder 4 (PSA)",
+    oorzaak:["Bobine/Bougie cilinder 4 defect"],
+    symptoom:["Motor loopt op 3 cilinders"],
+    oplossing:["Vervang componenten cilinder 4"]
+  },
   { code:"P1351", brand:["peugeot"],
     title_nl:"Gloeirelais circuit — relais niet aangestuurd (HDi)",
     title_en:"Pre-heating Relay Circuit — Relay Not Controlled (HDi)",
     oorzaak:["Defecte gloeibougies","Gloeirelais defect"],
-    symptoom:["Slecht starten bij kou","Witte rook bij koude start"],
+    symptoom:["Slecht starten bij kou","Witte rook"],
     oplossing:["Test gloeibougies","Vervang gloeirelais"]
+  },
+  { code:"P1352", brand:["peugeot"],
+    title_nl:"Gloeirelais circuit — relais aangestuurd maar geen stroom",
+    title_en:"Pre-heating Relay Controlled but Glow Plugs Not Supplied",
+    oorzaak:["Gloeirelais defect","Kabelbreuk naar gloeibougies"],
+    symptoom:["Slecht koudstarten"],
+    oplossing:["Vervang gloeirelais","Meet kabels door"]
   },
   { code:"P1434", brand:["peugeot"],
     title_nl:"Additiefpomp (FAP) — open circuit of defect",
     title_en:"Additive Pump (FAP) — Open Circuit or Defective",
-    oorzaak:["Defecte vloeistofpomp in de tank","Bedradingsfout naar achteren"],
+    oorzaak:["Vloeistofpomp in de tank defect","Bedradingsfout"],
     symptoom:["Melding roetfilter","Service lampje"],
-    oplossing:["Controleer bedrading pomp","Vervang additiefpomp"]
+    oplossing:["Check bedrading","Vervang additiefpomp"]
+  },
+  { code:"P1435", brand:["peugeot"],
+    title_nl:"Additiefsysteem — fout in communicatie of vuldopsensor",
+    title_en:"Additive System — Communication or Fuel Cap Sensor Fault",
+    oorzaak:["Magneet in brandstofdop weg","Defecte dopsensor","BSI fout"],
+    symptoom:["Regeneratie FAP werkt niet"],
+    oplossing:["Controleer magneet in tankdop","Vervang vuldopsensor"]
   },
   { code:"P1445", brand:["peugeot"],
     title_nl:"Additief in roetfilter — max drempel bereikt (FAP)",
     title_en:"Additive in Particle Filter — Max Threshold Reached (FAP)",
-    oorzaak:["Roetfilter zit fysiek vol met as (niet roet)","Hoge kilometerstand"],
-    symptoom:["Service melding","Filter verstopt melding"],
-    oplossing:["Roetfilter professioneel laten reinigen","Vervang het roetfilter","Reset teller in ECU"]
+    oorzaak:["FAP filter zit vol as","Hoge kilometerstand"],
+    symptoom:["Service melding","Filter verstopt"],
+    oplossing:["Roetfilter reinigen of vervangen","Reset ECU teller"]
   },
   { code:"P1446", brand:["peugeot"],
     title_nl:"Additiefniveau (FAP) — minimum niveau bereikt",
     title_en:"Additive Level (FAP) — Minimum Level Reached",
     oorzaak:["Eolys vloeistof op","Teller niet gereset"],
-    symptoom:["Melding op dashboard 'FAP level low'"],
-    oplossing:["Vul Eolys vloeistof bij","Reset teller via diagnose"]
+    symptoom:["Dashboard melding 'FAP level low'"],
+    oplossing:["Eolys vloeistof vullen","Reset via Diagbox"]
+  },
+  { code:"P1457", brand:["peugeot"],
+    title_nl:"FAP drukverschilsensor — slang los of gescheurd",
+    title_en:"FAP Differential Pressure Sensor — Hose Disconnected",
+    oorzaak:["Smelten van slangen bij sensor","Sensor defect"],
+    symptoom:["Foutcode P1457","Noodloop"],
+    oplossing:["Vervang de slangen (hittebestendig)","Check sensor"]
+  },
+  { code:"P1461", brand:["peugeot"],
+    title_nl:"EGR klep stand — inleerfout (klep zit vast)",
+    title_en:"EGR Valve Position Sensor Learning Fault",
+    oorzaak:["Vervuilde EGR klep","Koolstofblokkade"],
+    symptoom:["Inhouden","Rook uit uitlaat"],
+    oplossing:["EGR klep reinigen of vervangen"]
+  },
+  { code:"P1612", brand:["peugeot"],
+    title_nl:"Startonderbreker — communicatiefout ECU/BSI",
+    title_en:"Immobilizer — Communication Error ECU/BSI",
+    oorzaak:["Lege accu","Sleutelcode verloren","BSI storing"],
+    symptoom:["Auto start niet","Dashboard lampjes knipperen"],
+    oplossing:["Accu laden","Sleutels opnieuw inleren"]
+  },
+  { code:"P1613", brand:["peugeot"],
+    title_nl:"Configuratiefout — ECU niet geconfigureerd",
+    title_en:"Configuration Fault — ECU Not Configured",
+    oorzaak:["Nieuwe ECU niet ingeleerd","Software corrupt"],
+    symptoom:["Diverse storingen","Motor loopt niet optimaal"],
+    oplossing:["Telecodering uitvoeren via Diagbox"]
+  },
+  { code:"P1621", brand:["peugeot"],
+    title_nl:"ECU interne fout — RAM geheugen / Veiligheid",
+    title_en:"ECU Internal Fault — RAM/Safety Monitoring",
+    oorzaak:["Interne hardwarestoring ECU","Spanningspiek"],
+    symptoom:["Auto start niet","Diverse vage meldingen"],
+    oplossing:["Vervang de ECU"]
+  },
+  { code:"P1631", brand:["peugeot"],
+    title_nl:"ECU interne fout — brandstofinjectie regeling",
+    title_en:"ECU Internal Fault — Injection Control",
+    oorzaak:["Softwarefout in injectie-module","Interne hardware"],
+    symptoom:["Motor slaat af","Check engine"],
+    oplossing:["Update software of vervang ECU"]
+  },
+  { code:"P1671", brand:["peugeot"],
+    title_nl:"Cruise control — koherentie fout",
+    title_en:"Cruise Control — Coherence Fault",
+    oorzaak:["Remlichtschakelaar defect","Koppelingsschakelaar"],
+    symptoom:["Cruise control weigert in te schakelen"],
+    oplossing:["Vervang rem- of koppelingsschakelaar"]
   },
   { code:"P1693", brand:["peugeot"],
     title_nl:"Start/Stop systeem — aanvraag genegeerd (PSA)",
     title_en:"Controlled Start/Stop — Request Fault (PSA)",
-    oorzaak:["Zwakke accu","Defecte dynamo/omvormer","Probleem met startmotor"],
-    symptoom:["Start/Stop systeem werkt niet meer","Eco-lampje knippert"],
-    oplossing:["Test de accuconditie","Lees foutgeheugen van de startmotor/generator uit"]
+    oorzaak:["Zwakke accu","Defecte dynamo/omvormer","Startmotor"],
+    symptoom:["Start/Stop werkt niet meer","Eco-lampje"],
+    oplossing:["Test accu","Check foutgeheugen generator"]
   },
   { code:"P20E8", brand:["peugeot"],
     title_nl:"Ureumdruk (AdBlue) — te laag (BlueHDi)",
     title_en:"Reductant Pressure (AdBlue) — Too Low (BlueHDi)",
     oorzaak:["Defecte AdBlue pomp","Kristallisatie in leidingen"],
-    symptoom:["UREA lampje brandt","Aftellen km tot stop"],
+    symptoom:["UREA lampje brandt","KM afteller tot stop"],
     oplossing:["Vervang AdBlue tankunit","Reinig AdBlue injector"]
   },
 
@@ -585,61 +830,166 @@ const CODES = [
   //  SKODA-SPECIFIEKE CODES (VAG-groep)
   // ══════════════════════════════════════════
 
-  { code:"P0087", brand:["skoda"],
-    title_nl:"Brandstofdruk — te laag (TSI)",
-    title_en:"Fuel Rail Pressure Too Low (TSI)",
-    oorzaak:["Defecte hogedrukpomp (HPFP)","Slijtage cam follower"],
-    symptoom:["Inhouden","Motorlampje"],
-    oplossing:["Vervang HPFP","Check nokvolger op slijtage"]
+  { code:"P1011", brand:["skoda"],
+    title_nl:"Brandstofdrukregeling — bereik niet gehaald",
+    title_en:"Fuel Pressure Regulation: Control Range Not Reached",
+    oorzaak:["Lekkage in hogedruksysteem","Zwakke HPFP"],
+    symptoom:["Vermogensverlies bij volgas","Motorlampje"],
+    oplossing:["Controleer brandstofdruk","Check HPFP"]
+  },
+  { code:"P1025", brand:["skoda"],
+    title_nl:"Brandstofdrukregeling — mechanische storing",
+    title_en:"Fuel Pressure Regulation: Mechanical Malfunction",
+    oorzaak:["Defecte brandstofdrukregelaar","Vervuiling HPFP"],
+    symptoom:["Inhouden van de motor","Slechte koude start"],
+    oplossing:["Vervang drukregelaar","Controleer HPFP"]
+  },
+  { code:"P1031", brand:["skoda"],
+    title_nl:"Inlaatspruitstuk klep positiesensor (G336) — fout",
+    title_en:"Intake Manifold Runner Position Sensor (G336) Fault",
+    oorzaak:["Vastzittende wervelkleppen","Defecte sensor"],
+    symptoom:["Inhouden onderin","Dashboard melding EPC"],
+    oplossing:["Reinig inlaatkleppen","Vervang sensor G336"]
+  },
+  { code:"P1063", brand:["skoda"],
+    title_nl:"Brandstofdrukregeling — druk te laag (VAG)",
+    title_en:"Fuel Pressure Regulation: Control Range Not Reached",
+    oorzaak:["Filter verstopt","Lekkende verstuiver","Hogedrukpomp"],
+    symptoom:["Motor valt uit","EPC lampje"],
+    oplossing:["Filter vervangen","Verstuivers testen"]
+  },
+  { code:"P1065", brand:["skoda"],
+    title_nl:"Brandstofdrukregeling — regelverschil",
+    title_en:"Fuel Pressure Regulation: Control Difference",
+    oorzaak:["Lucht in systeem","Defecte solenoid","Sensorfout"],
+    symptoom:["Onregelmatig lopen","Check engine"],
+    oplossing:["Ontluchten","Solenoïde controleren"]
   },
   { code:"P1296", brand:["skoda"],
     title_nl:"Koelsysteem storing (VAG)",
     title_en:"Cooling System Malfunction (VAG)",
-    oorzaak:["Defecte koelvloeistoftemperatuursensor (G62)","Thermostaat defect"],
+    oorzaak:["Defecte sensor G62","Thermostaat defect"],
     symptoom:["Temperatuurmeter schommelt","Slecht starten"],
-    oplossing:["Vervang de G62 temperatuursensor","Vervang thermostaat"]
+    oplossing:["Vervang G62 sensor","Vervang thermostaat"]
+  },
+  { code:"P1500", brand:["skoda"],
+    title_nl:"Brandstofpomprelais (J17) — elektrisch defect",
+    title_en:"Fuel Pump Relay (J17): Electrical Malfunction",
+    oorzaak:["Defect relais","Slecht contact in zekeringkast"],
+    symptoom:["Motor start niet","Slaat af tijdens rijden"],
+    oplossing:["Vervang brandstofpomprelais"]
+  },
+  { code:"P1511", brand:["skoda"],
+    title_nl:"Inlaatspruitstuk omschakelklep — elektrisch defect",
+    title_en:"Intake Manifold Changeover Valve: Electrical Malfunction",
+    oorzaak:["Defecte solenoid","Bedradingsbreuk"],
+    symptoom:["Vermogensverlies bovenin toerengebied"],
+    oplossing:["Controleer solenoid en kabelboom"]
+  },
+  { code:"P1517", brand:["skoda"],
+    title_nl:"Hoofdrelais (J271) — elektrisch defect",
+    title_en:"Main Relay (J271): Electrical Malfunction",
+    oorzaak:["Relais defect","Zwakke accu"],
+    symptoom:["Auto start helemaal niet","Geen contact"],
+    oplossing:["Vervang hoofdrelais"]
+  },
+  { code:"P1545", brand:["skoda"],
+    title_nl:"Gasklepregelunit (J338) — storing",
+    title_en:"Throttle Device (J338): Malfunction",
+    oorzaak:["Vervuild gasklephuis","Bedrading","Inleerfout"],
+    symptoom:["Geen gasrespons","EPC lampje"],
+    oplossing:["Gasklephuis reinigen en inleren"]
+  },
+  { code:"P1556", brand:["skoda"],
+    title_nl:"Laaddrukregeling — negatieve afwijking (TDI)",
+    title_en:"Charge Pressure Control: Negative Deviation",
+    oorzaak:["Vacuümlek","VNT turbo vast","N75 klep defect"],
+    symptoom:["Limp mode","Auto trekt niet boven 3000 toeren"],
+    oplossing:["Vervang vacuümslangen","Check N75 klep"]
+  },
+  { code:"P1557", brand:["skoda"],
+    title_nl:"Laaddrukregeling — positieve afwijking (TDI overboost)",
+    title_en:"Charge Pressure Control: Positive Deviation",
+    oorzaak:["Vastzittende turbo variabelen","N75 defect"],
+    symptoom:["Plotseling vermogensverlies bij volgas"],
+    oplossing:["Turbo reinigen of reviseren"]
   },
   { code:"P1570", brand:["skoda"],
     title_nl:"Motorregeleenheid geblokkeerd — startonderbreker",
-    title_en:"Engine Control Module Disabled — Immobilizer Active",
-    oorzaak:["Sleutel niet herkend","Communicatiefout tussen tellerbak en ECU"],
-    symptoom:["Motor slaat aan en direct weer uit","Sleutel-icoon knippert"],
-    oplossing:["Probeer reserve-sleutel","Lees startonderbreker-module uit"]
+    title_en:"Engine Control Module Disabled: Immobilizer Active",
+    oorzaak:["Sleutel niet herkend","Communicatiefout tellerbak"],
+    symptoom:["Motor slaat aan en direct weer uit"],
+    oplossing:["Reserve sleutel proberen","Startonderbreker uitlezen"]
+  },
+  { code:"P1707", brand:["skoda"],
+    title_nl:"Interferentie in mechatronic module (DSG7)",
+    title_en:"Interference in Mechatronic Module (DSG7)",
+    oorzaak:["Slijtage in mechatronic","Softwarefout"],
+    symptoom:["DSG schakelt niet","Sleuteltje knippert op display"],
+    oplossing:["Software update of revisie mechatronic"]
   },
   { code:"P1735", brand:["skoda"],
     title_nl:"Positiesensor koppeling 1 — elektrisch defect (DSG)",
     title_en:"Clutch Position Sensor 1 — Electrical Fault (DSG)",
-    oorzaak:["Slijtage mechatronic","Metaaldeeltjes op sensor"],
-    symptoom:["Bak in noodloop","Alleen even of oneven versnellingen"],
-    oplossing:["Revisie of vervanging mechatronic"]
+    oorzaak:["Slijtage mechatronic","Metaalslijpsel op sensor"],
+    symptoom:["Bak in noodloop","Even versnellingen vallen uit"],
+    oplossing:["Revisie mechatronic"]
   },
   { code:"P1741", brand:["skoda"],
     title_nl:"Koppeling aanpassingslimiet bereikt (DSG)",
-    title_en:"Clutch Pressure Adaptation Limit Reached (DSG)",
-    oorzaak:["Versleten koppelingsplaten","Lekkage in mechatronic"],
-    symptoom:["Schokkend wegrijden","Slippende koppeling"],
-    oplossing:["Vervang de dubbele koppelingsset","Voer DSG basisinstellingen uit"]
+    title_en:"Clutch Pressure Adaptation: Limit Reached",
+    oorzaak:["Versleten koppelingen","Interne lekkage mechatronic"],
+    symptoom:["Schokken bij wegrijden","Slippen"],
+    oplossing:["Nieuwe koppelingsset","Basisinstelling uitvoeren"]
+  },
+  { code:"P1750", brand:["skoda"],
+    title_nl:"Voedingsspanning — te laag (Transmissie)",
+    title_en:"Voltage Supply: Low Voltage",
+    oorzaak:["Zwakke accu","Dynamo probleem"],
+    symptoom:["Bak schakelt niet meer goed"],
+    oplossing:["Accu laden of vervangen"]
+  },
+  { code:"P1760", brand:["skoda"],
+    title_nl:"Shift Lock solenoid (N110) — elektrisch defect",
+    title_en:"Shift Lock Solenoid (N110): Electrical Malfunction",
+    oorzaak:["Remlichtschakelaar defect","Solenoid in pook"],
+    symptoom:["Pook zit vast in P"],
+    oplossing:["Remlichtschakelaar controleren"]
+  },
+  { code:"P1793", brand:["skoda"],
+    title_nl:"Uitgaande assnelheidssensor 2 (G196) — geen signaal",
+    title_en:"Output Speed Sensor 2 (G196): No Signal",
+    oorzaak:["Sensor defect in de bak","Stekkercorrosie"],
+    symptoom:["Bak in noodloop","Snelheidsmeter valt uit"],
+    oplossing:["Controleer stekker","Vervang sensor G196"]
+  },
+  { code:"P1814", brand:["skoda"],
+    title_nl:"Drukregelklep 1 — open/kortsluiting (DSG)",
+    title_en:"Pressure Control Solenoid 1: Open/Short to Ground",
+    oorzaak:["Kabelboom mechatronic","Defecte solenoid"],
+    symptoom:["Bak klapt in versnelling"],
+    oplossing:["Mechatronic testen op bank"]
   },
   { code:"P2015", brand:["skoda"],
     title_nl:"Inlaatspruitstuk klep positie — buiten bereik (VAG)",
     title_en:"Intake Manifold Runner Position Sensor — Out of Range (VAG)",
-    oorzaak:["Slijtage van de wervelkleppen","Defecte stelmotor"],
-    symptoom:["Motorcontrolelampje brandt","Iets ruwer stationair"],
-    oplossing:["Installeer reparatie-bracket","Vervang stelmotor of inlaatspruitstuk"]
+    oorzaak:["Slijtage wervelkleppen","Stelmotor defect"],
+    symptoom:["EPC lampje","Iets ruwer lopen"],
+    oplossing:["Reparatie-bracket plaatsen","Vervang stelmotor"]
   },
   { code:"P2293", brand:["skoda"],
-    title_nl:"Brandstofdrukregelaar 2 — prestatie (VAG TSI HPFP)",
-    title_en:"Fuel Pressure Regulator 2 — Performance (VAG TSI HPFP)",
-    oorzaak:["Versleten cam follower (nokvolger)","Defecte hogedrukpomp (HPFP)"],
-    symptoom:["Inhouden bij volgas","Motorcontrolelampje"],
-    oplossing:["Vervang de cam follower direct","Vervang de HPFP"]
+    title_nl:"Brandstofdrukregelaar 2 — prestatie (TSI HPFP)",
+    title_en:"Fuel Pressure Regulator 2: Performance",
+    oorzaak:["Slijtage cam follower","Hogedrukpomp defect"],
+    symptoom:["Inhouden bij volgas","Noodloop"],
+    oplossing:["Vervang cam follower direct","Vervang HPFP"]
   },
   { code:"P3348", brand:["skoda"],
     title_nl:"Regeleenheid turbo 1 — elektrisch defect (VAG)",
-    title_en:"Turbocharger Control Unit 1 — Electrical Fault",
-    oorzaak:["Defecte elektrische actuator","Bedradingsbreuk"],
-    symptoom:["Gloeispiraal lampje knippert","Geen boost"],
-    oplossing:["Vervang turbo-actuator"]
+    title_en:"Control Unit for Turbocharger 1 — Electrical Fault",
+    oorzaak:["Turbo-actuator defect","Kabelbreuk"],
+    symptoom:["Gloeispiraal knippert","Geen boost"],
+    oplossing:["Vervang elektrische actuator"]
   },
 
   // ══════════════════════════════════════════
@@ -649,30 +999,30 @@ const CODES = [
   { code:"C1320", brand:["peugeot"],
     title_nl:"Wielsnelheidssensor linksvoor — defect (PSA)",
     title_en:"Front Left Wheel Speed Sensor — Fault (PSA)",
-    oorzaak:["Defecte ABS-sensor","Magnetische ring defect","Draadbreuk"],
-    symptoom:["ABS/ESP lampje brandt","Cruise control werkt niet"],
-    oplossing:["Reinig sensor en ring","Vervang ABS-sensor"]
+    oorzaak:["ABS-sensor defect","Magnetische ring defect"],
+    symptoom:["ABS/ESP lampje brandt"],
+    oplossing:["Sensor en ring reinigen","Vervang sensor"]
   },
   { code:"C1381", brand:["peugeot"],
     title_nl:"ABS/ESP pomp — elektrische storing (PSA)",
     title_en:"ABS/ESP Recirculation Pump — Electrical Fault (PSA)",
-    oorzaak:["Defecte pompmotor","Zekering defect","Slechte massa"],
-    symptoom:["ABS/ESP lampje brandt permanent"],
-    oplossing:["Controleer maxi-zekeringen","Vervang ABS-pomp"]
+    oorzaak:["Defecte pompmotor","Maxi-zekering defect"],
+    symptoom:["ABS/ESP lampje permanent"],
+    oplossing:["Check zekeringen","Vervang ABS-pomp"]
   },
   { code:"C101A", brand:["skoda"],
     title_nl:"Wielsnelheidssensor — onwaarschijnlijk signaal (VAG)",
     title_en:"Wheel Speed Sensor — Implausible Signal (VAG)",
-    oorzaak:["Vervuilde sensorkop","Defect wiellager"],
-    symptoom:["ABS/ESP en TPMS lampje branden"],
-    oplossing:["Reinig sensorkop","Vervang wiellager met ring"]
+    oorzaak:["Vuile sensorkop","Lager speling"],
+    symptoom:["ABS/ESP/TPMS lampjes"],
+    oplossing:["Reinig sensorkop","Vervang wiellager"]
   },
   { code:"C10AC", brand:["skoda"],
     title_nl:"Eindstop stuurinrichting niet geleerd (VAG)",
     title_en:"Steering End Stop Not Learned (VAG)",
-    oorzaak:["Accu los geweest","Stuurhuis vervangen"],
+    oorzaak:["Accu los geweest","Nieuw stuurhuis"],
     symptoom:["Rood stuurwiel lampje","Zwaar sturen"],
-    oplossing:["Kalibreer stuurwiel (links/rechts draaien)"]
+    oplossing:["Kalibreer stuurwiel (links/rechts)"]
   },
 
   // ══════════════════════════════════════════
@@ -682,16 +1032,16 @@ const CODES = [
   { code:"B1801", brand:["peugeot"],
     title_nl:"Airbag bestuurder — open circuit (PSA)",
     title_en:"Driver Airbag — Open Circuit (PSA)",
-    oorzaak:["Defecte sleepring (COM2000)","Losse stekker onder stoel"],
-    symptoom:["Airbag lampje brandt"],
-    oplossing:["Vervang COM2000 sleepring","Check stekkers"]
+    oorzaak:["Sleepring COM2000 defect","Connector onder stoel"],
+    symptoom:["Airbag lampje"],
+    oplossing:["Vervang COM2000","Check stekkers"]
   },
   { code:"B1036", brand:["skoda"],
     title_nl:"Ontsteker airbag — weerstand te hoog (VAG)",
     title_en:"Airbag Igniter — Resistance Too High (VAG)",
-    oorzaak:["Slechte verbinding stekker onder stoel","Bedradingsbreuk"],
-    symptoom:["Airbag lampje brandt"],
-    oplossing:["Zet stekker onder stoel vast (ty-rap fix)","Meet bedrading"]
+    oorzaak:["Stekker onder stoel slecht contact"],
+    symptoom:["Airbag lampje permanent"],
+    oplossing:["Zet stekker vast met ty-rap fix"]
   },
 
   // ══════════════════════════════════════════
@@ -701,30 +1051,23 @@ const CODES = [
   { code:"U1118", brand:["peugeot"],
     title_nl:"Geen communicatie met de BSI (PSA)",
     title_en:"No Communication with BSI (PSA)",
-    oorzaak:["BSI in Economy Mode","Lege accu","CAN-bus fout"],
-    symptoom:["Auto reageert niet","Starten onmogelijk"],
-    oplossing:["Laad accu op","PSA reset procedure (3 min wachten)"]
+    oorzaak:["BSI in Economy Mode","Lege accu"],
+    symptoom:["Auto reageert niet op sleutel"],
+    oplossing:["Accu laden","BSI reset procedure"]
   },
   { code:"U0100", brand:["generic"],
     title_nl:"Communicatie verloren met ECU",
     title_en:"Lost Communication with ECM/PCM",
-    oorzaak:["ECU zekering defect","Draadbreuk kabelboom"],
-    symptoom:["Motor start niet","Koelvin blaast volop"],
-    oplossing:["Check ECU zekeringen","Meet voeding op ECU stekker"]
+    oorzaak:["Zekering ECU defect","Kabelbreuk"],
+    symptoom:["Motor start niet","Koelvin blaast"],
+    oplossing:["Controleer zekeringen"]
   },
   { code:"U1121", brand:["skoda"],
     title_nl:"Databus — geen communicatie (VAG CAN)",
     title_en:"Databus — No Communication (VAG CAN)",
-    oorzaak:["Kortsluiting gateway","Vocht onder de vloer (comfort module)"],
-    symptoom:["Dashboardlampjes willekeurig"],
-    oplossing:["Controleer op vocht in vloer","Check Gateway module"]
-  },
-  { code:"U0155", brand:["skoda"],
-    title_nl:"Communicatie verloren met instrumentenpaneel (VAG)",
-    title_en:"Lost Communication with Instrument Cluster (VAG)",
-    oorzaak:["Defecte tellerbak","Losse stekker achter dashboard","Slechte solderingen"],
-    symptoom:["Gauges vallen uit","Auto start en slaat direct af"],
-    oplossing:["Controleer stekker achter de tellerbak","Vervang of laat tellerunit herstellen"]
+    oorzaak:["Gateway module fout","Vocht onder vloer"],
+    symptoom:["Veel vage elektronische fouten"],
+    oplossing:["Check gateway module"]
   }
 ]; // einde CODES array
 
@@ -778,7 +1121,6 @@ function updateUILabels() {
   sortSelect.options[0].textContent = t.sortCode;
   sortSelect.options[1].textContent = t.sortBrand;
 
-  // Update filter badges (selectively)
   document.querySelector('.badge[data-filter="all"]').textContent = t.filterAll;
   document.querySelector('.badge[data-filter="generic"]').textContent = t.filterGeneric;
 }
@@ -815,8 +1157,8 @@ function renderCodes() {
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
       if (!c.code.toLowerCase().includes(q) &&
-          !c.title_nl.toLowerCase().includes(q) &&
-          !c.title_en.toLowerCase().includes(q)) return false;
+          (c.title_nl && !c.title_nl.toLowerCase().includes(q)) &&
+          (c.title_en && !c.title_en.toLowerCase().includes(q))) return false;
     }
     return true;
   });
