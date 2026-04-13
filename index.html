@@ -16412,7 +16412,41 @@ const CODES = [
   {code:"P1895",brand:["overig"],title_nl:"TCM To ECM Torque Reduction Circuit Malfunction",title_en:"TCM To ECM Torque Reduction Circuit Malfunction"},
   {code:"P1899",brand:["overig"],title_nl:"P/N Position Transaxle Range Switch Circuit Fault",title_en:"P/N Position Transaxle Range Switch Circuit Fault"},
   {code:"P1900",brand:["overig"],title_nl:"Turbine Speed Sensor Circuit Intermittent",title_en:"Turbine Speed Sensor Circuit Intermittent"},
-  {code:"P1901",brand:["overig"],title_nl:"Torque Converter Clutch Circuit Intermittent",title_en:"Torque Converter Clutch Circuit Intermittent"}
+  {code:"P1901",brand:["overig"],title_nl:"Torque Converter Clutch Circuit Intermittent",title_en:"Torque Converter Clutch Circuit Intermittent"},
+
+  // ══════════════════════════════════════════
+  //  VAG PROPRIETARY CODES (VW / Audi / Seat / Skoda)
+  //  5-cijferig VAG-specifiek codesysteem
+  // ══════════════════════════════════════════
+
+  { code:"00709", brand:["volkswagen"],
+    title_nl:"Fotocel 2 voor meting zonnestraling (G134) — Onderbreking/kortsluiting met plus",
+    title_en:"Sunlight Photo Sensor 2 (G134) — Open Circuit / Short to Plus",
+    oorzaak:["Defecte fotocel 2 (G134) op het dashboard","Beschadigde bedrading of connector naar G134","Corrosie in de stekkerverbinding","Kortgesloten bedrading naar +12V"],
+    symptoom:["Sporadische klimaatregelingsstoring","Climatronic regelt temperatuur incorrect","Geen of verkeerde zonnestraling compensatie","Foutcode sporadisch aanwezig"],
+    oplossing:["Controleer bedrading en connector naar fotocel G134","Meet weerstand en spanning van sensor G134","Vervang fotocel G134 indien defect","Wis foutcode en controleer op terugkeer"]
+  },
+  { code:"00797", brand:["volkswagen"],
+    title_nl:"Fotocel voor meting zonnestraling (G107) — Onderbreking/kortsluiting met plus",
+    title_en:"Sunlight Photo Sensor (G107) — Open Circuit / Short to Plus",
+    oorzaak:["Defecte fotocel (G107) op het dashboard bij de voorruit-ventilatieopening","Beschadigde of gebroken bedrading naar G107","Kortsluiting in bedrading naar plus","Corrosie in de stekkerverbinding"],
+    symptoom:["Sporadische klimaatregelingsstoring","Climatronic past luchtstroom niet correct aan op zonnestraling","Foutcode komt en gaat (sporadisch)","Mogelijk onjuiste temperatuurregeling bij zonnig weer"],
+    oplossing:["Controleer connector en bedrading van fotocel G107","Meet weerstand van de sensor","Vervang fotocel G107 indien defect","Wis foutcode en doe een rijtest bij zonlicht"]
+  },
+  { code:"01809", brand:["volkswagen"],
+    title_nl:"Stelmotor temperatuurregelklep links (V158) — Actief/statisch",
+    title_en:"Actuating Motor for Temperature Flap: Left (V158) — Active/Static",
+    oorzaak:["Stelmotor V158 mechanisch geblokkeerd of kapot","Temperatuurklep zit vast door vuil of slijtage","Defecte bedrading of connector naar V158","Basisinstelling van het Climatronic-systeem verloren gegaan"],
+    symptoom:["Klikkend geluid achter het dashboard (linkszijde)","Ongelijkmatige temperatuurverdeling — linkerkant te warm of te koud","Climatronic reageert niet op temperatuurinstelling links","Foutcode actief of statisch aanwezig"],
+    oplossing:["Voer basisinstelling (basic setting) opnieuw uit via VCDS/ODIS","Controleer bedrading en connector van stelmotor V158","Controleer of de temperatuurklep mechanisch vrij beweegt","Vervang stelmotor V158 indien defect"]
+  },
+  { code:"01810", brand:["volkswagen"],
+    title_nl:"Stelmotor rechter temperatuurklep (V159) — Actief/statisch",
+    title_en:"Actuating Motor for Temperature Flap: Right (V159) — Active/Static",
+    oorzaak:["Stelmotor V159 mechanisch geblokkeerd of kapot","Temperatuurklep rechterzijde zit vast","Defecte bedrading of connector naar V159","Basisinstelling Climatronic verloren gegaan (treedt vaak samen op met 01809)"],
+    symptoom:["Klikkend geluid achter het dashboard (rechtszijde)","Rechterkant van het interieur te warm of te koud","Climatronic regelt rechts niet correct","Vaak tegelijk met foutcode 01809 aanwezig"],
+    oplossing:["Voer basisinstelling (basic setting) opnieuw uit via VCDS/ODIS","Controleer bedrading en connector van stelmotor V159","Controleer mechanische vrijloop van de rechter temperatuurklep","Vervang stelmotor V159 indien defect"]
+  }
 
 ]; // einde CODES array
 
